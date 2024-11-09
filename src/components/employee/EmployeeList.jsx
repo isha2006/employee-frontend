@@ -12,7 +12,7 @@ const EmployeeList = () => {
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/api/employee", {
+                const response = await axios.get("https://employee-backend-pink.vercel.app/api/employee", {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem("token")}`
                     }
@@ -25,7 +25,7 @@ const EmployeeList = () => {
                         dep_name: emp.department.dep_name,
                         name: emp.userId.name,
                         dob: new Date(emp.dob).toLocaleDateString(),
-                        profileImg: <img width={60} className='rounded-full' src={`http://localhost:8080/${emp.userId.profileImg}`}/>,
+                        profileImg: <img width={60} className='rounded-full' src={`https://employee-backend-pink.vercel.app/${emp.userId.profileImg}`}/>,
                         action: <EmployeeButtons id={emp._id} />
                     }))
                     setEmployees(data)

@@ -35,7 +35,7 @@ const Setting = () => {
             return;
         } else {
             try {
-                const response = await axios.put("http://localhost:8080/api/setting/change-password", setting, {
+                const response = await axios.put("https://employee-backend-pink.vercel.app/api/setting/change-password", setting, {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem("token")}`
                     }

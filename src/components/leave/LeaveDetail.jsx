@@ -9,7 +9,7 @@ const LeaveDetail = () => {
 
     const fetchLeave= async()=>{
         try {
-            const response = await axios.get(`http://localhost:8080/api/leave/detail/${id}`, {
+            const response = await axios.get(`https://employee-backend-pink.vercel.app/api/leave/detail/${id}`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
@@ -30,7 +30,7 @@ const LeaveDetail = () => {
 
     const changeStatus= async(id, status)=>{
         try {
-            const response = await axios.put(`http://localhost:8080/api/leave/${id}`, {status}, {
+            const response = await axios.put(`https://employee-backend-pink.vercel.app/api/leave/${id}`, {status}, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
@@ -51,7 +51,7 @@ const LeaveDetail = () => {
             <div className="h-96 bg-purple-50 shadow-md rounded-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex justify-center items-center h-full">
                     <img
-                        src={`http://localhost:8080/${leave.employeeId.userId.profileImg}`}
+                        src={`https://employee-backend-pink.vercel.app/${leave.employeeId.userId.profileImg}`}
                         alt=''
                         className="w-60 h-60 rounded-full border-4 border-blue-400"
                     />

@@ -10,7 +10,7 @@ const EditDepartment = () => {
     useEffect(() => {
         const fetchDepartments= async()=>{
           try{
-            const response= await axios.get(`http://localhost:8080/api/department/${id}`, {
+            const response= await axios.get(`https://employee-backend-pink.vercel.app/api/department/${id}`, {
               headers:{
                 "Authorization" : `Bearer ${localStorage.getItem("token")}`
               }
@@ -35,7 +35,7 @@ const EditDepartment = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try{
-          const response= await axios.put(`http://localhost:8080/api/department/${id}`, department, {
+          const response= await axios.put(`https://employee-backend-pink.vercel.app/api/department/${id}`, department, {
             headers:{
               "Authorization" : `Bearer ${localStorage.getItem("token")}`
             }

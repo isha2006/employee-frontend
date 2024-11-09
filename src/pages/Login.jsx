@@ -13,7 +13,7 @@ const navigate= useNavigate()
 const handleSubmit= async(e)=>{
   e.preventDefault()
   try{
-    const response= await axios.post("http://localhost:8080/api/auth/login", {email, password})
+    const response= await axios.post("https://employee-backend-pink.vercel.app/api/auth/login", {email, password})
     if(response.data.success){
       login(response.data.user)
       localStorage.setItem("token", response.data.token)

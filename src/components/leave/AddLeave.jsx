@@ -19,7 +19,7 @@ const AddLeave = () => {
         e.preventDefault()
 
         try {
-            const response = await axios.post(`http://localhost:8080/api/leave/add`, leave, {
+            const response = await axios.post(`https://employee-backend-pink.vercel.app/api/leave/add`, leave, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
